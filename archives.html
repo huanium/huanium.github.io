@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Archive | Huan Bui</title>
+    <link rel="icon" href="huan.png">
+    <link rel="stylesheet" href="index_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab" rel="stylesheet">
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130997558-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130997558-1');
+    </script>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      extensions: ["tex2jax.js"],
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+      messageStyle: "none"
+    });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <div class="buttons">
+      <div class="dropdown">
+            <a style="text-decoration:none" class="dropbtn" href="index.html">About</a>
+      </div>
+
+      <div class="dropdown">
+            <a style="text-decoration:none" class="dropbtn" href="LaTeX projects\CV\CV.pdf" target="_blank">CV</a>
+      </div>
+
+<!--
+      <div class="dropdown">
+            <a style="text-decoration:none" class="dropbtn" href="LaTeX projects\Huan_Resume Project\resume.pdf">Resume</a>
+      </div>
+
+
+      <div class="dropdown">
+            <a style="text-decoration:none" class="dropbtn" href="a-quick-guide-to.html">A Quick Guide to...</a>
+      </div>
+-->
+      <div class="dropdown">
+          <a style="text-decoration:none" class="dropbtn" href="projects.html">Projects</a>
+      </div>
+
+
+      <div class="dropdown">
+          <a style="text-decoration:none" class="dropbtn" href="archives.html">Archive</a>
+      </div>
+
+
+      <div class="dropdown">
+          <a style="text-decoration:none" class="dropbtn" href="photo.html">Photography</a>
+      </div>
+
+
+  </div>
+
+
+<hr class="nice-line"/>
+
+<!--
+<h1>
+<img src="conv.png"  style="width:11%;height:auto;">
+<img src="conv-1.png"  style="width:11%;height:auto;">
+
+<img src="conv-2.png"  style="width:11%;height:auto;">
+<img src="conv-3-new.png"  style="width:11%;height:auto;">
+
+</h1>
+-->
+
+
+
+    <h1>Archive</h1>
+
+    <div class="ul"><b>Scripts/Notebooks/Simulations: </b>
+      <ul>
+        <li>A <a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/MATLAB/BUI_LandauZener_Decay.m" target="_blank">MATLAB routine</a> to verify the formula for Landau-Zener transition probability</li>
+        <li>Common magnetic traps for ultracold atom experiments and the Majorana spin-flip problem. <a style="text-decoration:none;" href="MIT PhD/BUI_MagneticTraps/BUI_MagneticTraps.pdf" target="_blank">Link to pdf.</a> Here are three MATLAB files with simple
+        simulations of the common <a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/MATLAB/magTrap_antiHelmholtz.m" target="_blank">quadrupole trap</a>,
+          <a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/MATLAB/magTrap_TOP.m" target="_blank">TOP trap</a>, and
+          <a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/MATLAB/magTrap_IoffePritchard_APPROX.m" target="_blank">all-coil Ioffe-Pritchard trap</a> which are used to produce the figures in the pdf. (under construction)</li>
+        <li>PID control theory and example.<a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/MATLAB/PID_harmonic_osc.m" target="_blank"> This </a> MATLAB routine simulates PID tuning for a driven, damped harmonic oscillator.
+        <a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/mathematica/PID_DDSHO.nb" target="_blank">This </a> Mathematica notebook contains some Bode plots showing the effects of tuning the PID parameters.
+    <a style="text-decoration:none;" href="MIT PhD/BUI_PID/BUI_PID.pdf" target="_blank">Here </a> is a quick guide to PID feedback control.</li>
+        <li><a style="text-decoration:none;" href="archives/BUI_Zeeman_hyperfine.m" target="_blank">Zeeman hyperfine splitting.</a> A simple MATLAB routine for computing hyperfine splitting due to an external magnetic field.
+        The calculation takes into account both $A_\text{hfs}$ and $B_\text{hfs}$ hyperfine-structure constants.</li>
+        <li><a style="text-decoration:none;" href="Convolution Powers/Convolve.m" target="_blank">Convolution powers.</a> A simple MATLAB routine for computing iterative convolutions of a complex function that is finitely-supported on $\mathbb{Z}^d$. </li>
+        <li><a style="text-decoration:none;" href="Convolution Powers/Convolve_Log.m" target="_blank"> Power-law decay of convolution powers. </a> This MATLAB routine shows the power-decay of convolution powers as predicted by theory.</li>
+        <li><a style="text-decoration:none;" href="Convolution Powers/Oscillatory_H_estimate.m" target="_blank"> Attractor of convolution powers. </a> This MATLAB routine computes the attractor of convolution powers
+            by numerically integrating highly oscillatory integrals.</li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_ExpNonLinear/Project 2/BUI_patterns.m" target="_blank">Turing patterns.</a> A MATLAB routine for generating 2D Turing patterns from the Brusselator and the Gray-Scott model. </li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_QM/SphericalSolution_Vainshtein.nb" target="_blank">Spherical Solution + Vainshtein radius.</a> Spherical solution to non-linear massive gravity and the origins of the Vainshtein radius.</li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_QM/Cartesian_Vainshtein.nb" target="_blank">Cartesian Solution</a>. Derivation of the $tt$ equation in general relativity.</li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_QM/xACT-gravity.nb" target="_blank"> General relativity with xACT</a>. Some examples on how to use xACT for general relativity.</li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_QM/Einstein-Field-Equations.nb" target="_blank">Einstein Field Equations from variational principles</a>.</li>
+        <li><a style="text-decoration:none;" href="research/Ramsey.nb" target="_blank">Ramsey fringes in Mathematica</a> (interactive)</li>
+      </ul>
+    </div>
+
+    <div class="ul"><b> Physics Notes:</b>
+      <ul>
+        <li><a style="text-decoration:none;" href="MIT PhD/BUI_LandauZener/BUI_LandauZener.pdf" target="_blank">Landau-Zener transition probability: notes and numerical verification</a></li>
+        <li><a style="text-decoration:none;" href="MIT PhD/BUI_MagneticTraps/BUI_MagneticTraps.pdf" target="_blank">Common magnetic traps for ultracold atom experiments and the Majorana spin-flip problem</a> (under construction)</li>
+        <li><a style="text-decoration:none;" href="MIT PhD/BUI_PID/BUI_PID.pdf" target="_blank">A quick guide to PID feedback control</a></li>
+        <!-- <li><a style="text-decoration:none;" href="MIT PhD/BUI_AtomicPhysics/BUI_AtomicPhysics.pdf" target="_blank">Experimental Atomic Physics reading notes</a></li>
+        <li><a style="text-decoration:none;" href="MIT PhD/BUI_Classical_Review/BUI_Classical_Review.pdf" target="_blank">Classical Mechanics review (for PhD Quals)</a></li>
+        <li><a style="text-decoration:none;" href="archives/HuanBui_CMT_QFT.pdf" target="_blank">Condensed Matter and QFT</a></li> 
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_Physics_Thesis/BUI_Quantum_Beats.pdf" target="_blank">Quantum Beats and the Magic Angle </a></li> -->
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_QM/BUI_scattering_theory.pdf" target="_blank">Scattering Theory in QM (Sakurai) </a></li>
+        <li><a style="text-decoration:none" href="LaTeX projects\HuanBui_Perimeter\HuanBui_Ising.pdf" target="_blank"> The Quantum Ising Chain</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_QFT/HuanBui_QFT.pdf" target="_blank">Quantum Field Theory</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_Perimeter\HuanBui_Perimeter.pdf"  target="_blank">Notes from the Perimeter Institute Summer School</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_QM\HuanBui_QM.pdf" target="_blank">Field Theories and Massive Gravity</a></li>
+        <li><a style="text-decoration:none;" href="archives/Contour_Integrals_Bluhm.pdf" target="_blank">Notes on Contour Integrals for QFT - Prof. Bluhm</a></li>
+        <li><a style="text-decoration:none;" href="archives/PH491.pdf" target="_blank">Classical Field Theory (handwritten)</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\Classical_Fields_Theory\HuanBui_ClassicalFieldTheory.pdf" target="_blank">Classical Field Theory (TeX)</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_QI\HuanBui_QI.pdf" target="_blank"> Quantum Information and Computation </a></li>
+        <li><a style="text-decoration:none;" href="archives/PH431.pdf" target="_blank">Quantum Mechanics</a></li>
+        <li><a style="text-decoration:none;" href="archives/PH321.pdf" target="_blank">Electricity & Magnetism</a></li>
+        <li><a style="text-decoration:none;" href="archives/GR_dec_7.pdf" target="_blank">General Relativity and Cosmology (handwritten)</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_GR\HuanBui_GR.pdf" target="_blank">General Relativity and Cosmology (TeX, unfinished)</a></li>
+        <li><a style="text-decoration:none;" href="archives/PH311.pdf" target="_blank">Classical Mechanics</a></li>
+        <li><a style="text-decoration:none;" href="archives/PH332.pdf" target="_blank">Thermodynamics & Statistical Mechanics</a></li>
+        <li><a style="text-decoration:none;" href="archives/PH242.pdf" target="_blank">Modern Physics II</a></li>
+        <li><a style="text-decoration:none;" href="archives/PH241.pdf" target="_blank">Modern Physics I</a></li>
+      </ul>
+    </div>
+
+    <div class="ul"><b> Mathematics/Statistics Notes:</b>
+        <ul>
+
+        <li><a style="text-decoration:none;" href="archives/MA333.pdf" target="_blank">Abstract Algebra</a></li>
+        <li><a style="text-decoration:none;" href="archives/MA352.pdf" target="_blank">Complex Analysis</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_CA/HuanBui_CA.pdf" target="_blank">Complex Analysis, Finals Review</a></li>
+        <li><a style="text-decoration:none;" href="archives/MA353.pdf" target="_blank">Matrix Analysis (hand-written)</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\Matrix_Analysis\HuanBui_MatrixAnalysis.pdf" target="_blank">Matrix Analysis (TeX)</a></li>
+        <li><a style="text-decoration:none;" href="archives/MA253_Otto.pdf" target="_blank">Linear Algebra</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_PDE\HuanBui_PDE.pdf">Partial Differential Equations</a></li>
+        <li><a style="text-decoration:none;" href="archives/MA311_ODE_dec_7.pdf" target="_blank">Ordinary Differential Equations</a></li>
+        <li><a style="text-decoration:none;" href="archives/MA381_Probability_dec_7.pdf" target="_blank">Probability I</a></li>
+        <li><a style="text-decoration:none;" href="archives/MA262_Otto_dec_7.pdf" target="_blank">Vector Calculus</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_Inference\HuanBui_Inference.pdf" target="_blank">Statistical Inference (Probability II)</a></li>
+        <li><a style="text-decoration:none;" href="archives/SC398.pdf" target="_blank">Longitudinal Analysis</a></li>
+      </ul>
+    </div>
+
+    <div class="ul"><b>Derivations: </b>
+      <ul>
+        <li><a style="text-decoration:none;" href="archives/Ramsey/Ramsey_theory.pdf" target="_blank">Ramsey fringes in TeX</a></li>
+        <li><a style="text-decoration:none;" href="archives/Ramsey/Ramsey_1950_derivation.pdf" target="_blank">Ramsey fringes (handwritten)</a></li>
+        <li><a style="text-decoration:none;" href="archives/spherical_laplacian.pdf" target="_blank">Spherical Laplacian</a></li>
+      </ul>
+    </div>
+
+    <div class="ul"><b>Abstract/Posters/Presentations: </b>
+      <ul>
+        <li><a style="text-decoration:none;" href="https://meetings.ams.org/math/jmm2021/meetingapp.cgi/Paper/2712" target="_blank">Presentation: A generalized polar-coordinate integration formula with applications to local (central) limit theorems and operator semigroups (Bui & Randles at JMM 2021)</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects\HuanBui_Perimeter\Presentation\MBQC_as_Simulation.pdf" target="_blank">Presentation: Measurement-assisted variational quantum simulation (Supervisor: Timothy Hsieh, Perimeter Institute)</a></li>
+        <li><a style="text-decoration:none;" href="research/Damop19_Bui_ExtendedAbstract.pdf" target="_blank">Extended Abstract: Ramsey SOF method for precision spectroscopy (DAMOP 2019).</a></li>
+        <li><a style="text-decoration:none;" href="research/DAMOP19 poster/DAMOP19.pdf" target="_blank">Poster: Millimeter-wave precision spectroscopy of potassium in Rydberg states (DAMOP 2019).</a></li>
+        <li><a style="text-decoration:none;" href="research/CUSRR2018.pdf" target="_blank">Poster: Colby Undergraduate Summer Research Retreat (CUSRR) 2018.</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/Matrix_Analysis/CLAS 2019/Quantum-Circuit.pdf" target="_blank">Presentation: Matrix Theory in a 2-Qubit Entangler.</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/Matrix_Analysis/CLAS 2019/CLAS-script.pdf" target="_blank">Script: Matrix Theory in a 2-Qubit Entangler.</a></li>
+        <li><a style="text-decoration:none;" href="LaTeX projects/HuanBui_PDE/PDE-Project/PDE-slides.pdf" target="_blank">Presentation: PDE's and Calculus of Variations</a></li>
+      </ul>
+    </div>
+
+
+
+    <div class="ul"><b>In the news: </b>
+      <ul>
+        <li>
+      <a style="text-decoration:none;" href="https://www.colby.edu/magazine/central-limit-theorem-breakthrough/" target="_blank">
+        Breaking the Bell Curve: Professor and student push limits of foundational math theorem (September 2, 2021)</a></li>
+          <li>
+        <a style="text-decoration:none;" href="https://www.colby.edu/news/2021/05/23/200th-commencement-highlights-connections-creativity-and-courage/" target="_blank">
+      200th Commencement Highlights Connections, Creativity, and Courage (May 23, 2021)</a></li>
+        <li>
+        <a style="text-decoration:none;" href="https://www.colby.edu/news/2021/05/21/huan-bui-21-named-class-marshal-with-highest-gpa/?utm_campaign=social_referrals&utm_medium=bio&utm_source=instagram" target="_blank">
+      Huan Bui '21 Named Class Marshal with Highest GPA (May 21, 2021)</a></li>
+      <li>
+    <a style="text-decoration:none;" href="https://www.colby.edu/mathstats/news-feed/" target="_blank">
+  What have [Colby MathStats] department members been up to? (March, 2021)</a></li>
+        <li>
+      <a style="text-decoration:none;" href="https://www.colby.edu/news/2019/04/28/colby-math-teams-are-winners/" target="_blank">
+    Colby Math Teams are Winners (April 28, 2019)</a></li>
+      </ul>
+        <br><br><br>
+    </div>
+
+
+
+<body>
+
+</html>
