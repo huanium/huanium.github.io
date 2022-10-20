@@ -1,0 +1,380 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{braket}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Huan Q. Bui}
+\lhead{Ramsey Fringes Derivation}
+\rfoot{\thepage}
+
+\begin{document}
+\section{Ramsey Fringes Overview:}
+\noindent 
+Following a double pulse, the population of the excited state is:
+\begin{equation*}
+\boxed{P_2 = 4\sin^{2}\theta\sin^{2}\frac{\Omega'\tau}{2} \left\lbrace \cos \frac{\Omega'\tau}{2}\cos \frac{\Delta_0 T}{2} - \cos\theta\sin\frac{\Omega'\tau}{2} \sin \frac{\Delta_0 T}{2}\right\rbrace}
+\end{equation*}
+\noindent 
+under the assumption that initially,
+\[
+\begin{pmatrix}
+C_1(0)\\C_2(0)
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\0
+\end{pmatrix}
+\]
+\noindent 
+The final state vector is:
+\[
+\begin{pmatrix}
+C_1(2\tau+T)\\C_2(2\tau+T)
+\end{pmatrix}
+=
+\rho_2 D \rho_1
+\begin{pmatrix}
+C_1(0)\\C_2(0)
+\end{pmatrix}
+\]
+where $|C_1|^2 + |C_2|^2 = 1$ for all value of time, and $\rho_1$ and $\rho_2$ are propagators associated with Pulse 1 and Pulse 2 (both with width $\tau$), respectively. $D$ is a propagator associated with the field-free evolution of duration $T$.\\
+
+\noindent Specifically, in the interaction representation:
+\[
+\rho_1 = e^{-i\overline\Delta\tau}
+\begin{pmatrix}
+e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2}\right)  
+& ie^{-i\left(\frac{\Delta_0}{2}\tau + \phi_0 \right)} \sin\theta\sin\frac{\Omega'\tau}{2} 
+\\
+ie^{i\left(\frac{\Delta_0}{2}\tau + \phi_0 \right)} \sin\theta\sin\frac{\Omega'\tau}{2} 
+& 
+e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} - i\cos\theta\sin\frac{\Omega'\tau}{2}\right)  
+\end{pmatrix}\]
+
+\noindent 
+\[
+\rho_2 = e^{-i\overline\Delta\tau}
+\begin{pmatrix}
+e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2}\right)  
+& ie^{-i\left(\frac{\Delta_0}{2}\tau + \phi_0 \right)} \sin\theta\sin\frac{\Omega'\tau}{2}e^{-i\Delta_0(\tau+T)}
+\\
+ie^{i\left(\frac{\Delta_0}{2}\tau + \phi_0 \right)} \sin\theta\sin\frac{\Omega'\tau}{2}e^{i\Delta_0(\tau+T)}
+& 
+e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} - i\cos\theta\sin\frac{\Omega'\tau}{2}\right)  
+\end{pmatrix}\]
+\noindent
+and 
+\[D
+=
+\begin{pmatrix}
+1 & 0 \\ 0 & 1
+\end{pmatrix}
+\]
+\noindent
+Note that $D$, in the interaction representation, is the identity matrix. This is different from Ramsey's original approach in which the state vector does evolve and change during the delay time $T$. The angle $\theta$ is defined as:
+\[
+\sin\theta = \frac{{\Omega_0}^*}{\Omega'}
+\]
+\noindent
+and
+\[
+\cos\theta = \frac{\Delta_0 + \Delta_d}{\Omega'}
+\]
+\noindent
+where ${\Omega_0}^*$ is the complex conjugate of the Rabi rate, and $\Omega'$ can be defined as the ``effective Rabi rate.''
+\[
+\Omega'= \sqrt{|{\Omega_0}^*| + (\Delta_0 + \Delta_d)^2}
+\]
+\newpage
+
+\section{Detailed Derivation for $P_f$}
+In the interaction representation,
+\begin{align}
+\boxed{i\begin{pmatrix}
+\dot{a}_i(t)\\
+\dot{a}_f(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+\Delta_i & -\frac{\Omega^{*}_{0}}{2}e^{-i\Delta_0t}\\
+-\frac{\Omega_0}{2}e^{i\Delta_0t} & \Delta_f
+\end{pmatrix}
+\begin{pmatrix}
+a_i(t)\\
+a_f(t)
+\end{pmatrix}}
+\end{align}
+where $\Delta_i$ is the ac Stark shift in the $\ket{i}$ state and $\Delta_f$ is the ac Stark shift in the $\ket{f}$ state. We first solve for $a_i$:
+\begin{align}
+i\ddot{a}_i &= \Delta_i \dot{a}_i - \frac{\Omega^*_0}{2}e^{-i\Delta_0t}\dot{a}_f + \frac{i\Delta_0}{2}\Omega^*_0e^{-i\Delta_0t}a_f,
+\end{align}
+where
+\begin{align}
+a_f = \left(\frac{\Omega^*_0}{2}e^{-\Delta_0t} \right)^{-1}\left( \Delta_ia_i-i\dot{a}_i\right) = \frac{2}{\Omega^*_0}e^{i\Delta_0t} \left(\Delta_ia_i - i\dot{a}_i \right) . 
+\end{align}
+From Eq. (1), we also have
+\begin{align}
+\dot{a}_f &= i^{-1}\left( -\frac{\Omega_0}{2}e^{i\Delta_0t}a_i + \Delta_fa_f \right) \nonumber\\
+&= i^{-1}\left[ -\frac{\Omega_0}{2}e^{i\Delta_0t}a_i + \Delta_f\left(\Delta_ia_i-i\dot{a}_i \right)\left(\frac{2}{\Omega^*_0}e^{i\Delta_0t} \right)   \right] \nonumber\\
+&= \frac{2i}{\Omega^*_0}e^{i\Delta_0t}\left( \frac{\vert \Omega_0\vert^2}{4}a_i - \Delta_f\Delta_ia_i + i\Delta_f\dot{a}_i \right). 
+\end{align}
+Therefore,
+\begin{align}
+\ddot{a}_i &= -i\Delta_ia_i + \frac{i\Omega^*_0}{2}e^{-i\Delta_0t}\left[\frac{2i}{\Omega^*_0}e^{i\Delta_0t}\left( \frac{\vert \Omega_0\vert^2}{4}a_i - \Delta_f\Delta_ia_i + i\Delta_f\dot{a}_i \right) \right] \nonumber \\
+&+ \frac{\Delta_0}{2}\Omega^*e^{-i\Delta_0t}\frac{2}{\Omega^*_0}e^{i\Delta_0t} \left(\Delta_ia_i - i\dot{a}_i \right) \nonumber\\
+&= -i\Delta_i\dot{a}_i - \frac{\vert \Omega_0\vert^2}{4}a_i + \Delta_f\Delta_ia_i - i\Delta_f\dot{a}_i + \Delta_0\Delta_ia_i - i\Delta_0\dot{a}_i \nonumber\\
+&= -i\left( \Delta_0 + \Delta_i + \Delta_f\right)\dot{a}_i - \left[ \frac{\vert \Omega_0\vert^2}{4} - \Delta_i\left( \Delta_f + \Delta_0 \right)  \right]a_i \nonumber\\
+&= -i\left( \Delta_0 + \Delta_i + \Delta_f\right)\dot{a}_i - \frac{1}{4}\left( \vert\Omega_0\vert^2 - 4\Delta_i\Delta_f - 4\Delta_i\Delta_0 \right)a_i.
+\end{align}
+We obtain the first second-order homogeneous differential equation:
+\begin{align}
+\ddot{a}_i + i\left( \Delta_0 + \Delta_i + \Delta_f\right)\dot{a}_i + \left[ \frac{\vert \Omega_0\vert^2}{4} - \Delta_i\left( \Delta_f + \Delta_0 \right)  \right]a_i = 0.
+\end{align}
+Let a guess solution be $a_i(t) = a_0e^{i\omega t}$. The characteristic equation is:
+\begin{align}
+-\omega^2 + i\left( \Delta_0 + \Delta_i + \Delta_f\right)(i\omega) + \frac{1}{4}(\vert\Omega_0\vert^2 - 4\Delta_0\Delta_i - 4\Delta_i\Delta_f) &= 0 \nonumber\\
+-\omega^2 - \left( \Delta_0 + \Delta_i + \Delta_f\right)\omega + \frac{1}{4}(\vert\Omega_0\vert^2 - 4\Delta_0\Delta_i - 4\Delta_i\Delta_f) &= 0.
+\end{align}
+Solving the quadratic equation (7) and obtain $w$:
+\begin{align}
+\omega &= -\frac{\Delta_0 + \Delta_f + \Delta_i}{2} \pm\frac{1}{2}\sqrt{(\Delta_0 + \Delta_f + \Delta_i)^2 + \vert\Omega_0\vert^2 - 4\Delta_0\Delta_i - 4\Delta_i\Delta_f }\nonumber\\
+&= -\frac{\Delta_0 + \Delta_f + \Delta_i}{2}\nonumber\\ &\pm\frac{1}{2}\sqrt{(\Delta_0 + \Delta_f + \Delta_i)^2 + \Delta^2_0 + \vert\Omega_0\vert^2 + (\Delta_i-\Delta_f)^2 -2\Delta_0(\Delta_i-\Delta_f) }
+\end{align}
+Let $\bar{\Delta} = (\Delta_i + \Delta_f)/2$ and $\Delta_d = \Delta_f - \Delta_i$, this gives
+\begin{align}
+\boxed{\omega = -\frac{\Delta_0}{2} - \bar{\Delta} \pm \frac{1}{2}\sqrt{\vert\Omega_0\vert^2 + (\Delta_0 + \Delta_d)^2}}
+\end{align}
+Next, let the ``effective Rabi rate'' be $\Omega'$, defined as
+\begin{align}
+\Omega' = \sqrt{\vert\Omega_0\vert^2 + (\Delta_0 + \Delta_d)^2}.
+\end{align}
+The general solution to eq. (7) is:
+\begin{align}
+a_i &= a_+e^{i\omega_+ t} + a_-e^{i\omega_- t}\nonumber\\
+&= e^{-i\bar{\Delta}t}e^{-i\frac{\Delta_0}{2}t}\left(a_+e^{i\frac{\Omega'}{2}t} + a_-e^{-i\frac{\Omega'}{2}t} \right) 
+\end{align}
+So,
+\begin{align}
+\boxed{a_i = e^{-i\bar{\Delta}t}e^{-i\frac{\Delta_0}{2}t}\left(A\cos\frac{\Omega't}{2} + B\sin\frac{\Omega't}{2} \right) }
+\end{align}
+Next, we solve for $a_f$. From eq. (3):
+\begin{align}
+a_f &= \frac{2}{\Omega^*_0}e^{i\Delta_0t} \left(\Delta_ia_i - i\dot{a}_i \right) \nonumber\\
+&= \frac{2}{\Omega^*_0}e^{i\Delta_0t}\left[\Delta_i e^{-i\bar{\Delta}t}e^{-i\frac{\Delta_0}{2}t}\left(A\cos\frac{\Omega't}{2} + B\sin\frac{\Omega't}{2} \right)  - i\dot{a}_i\right]\nonumber\\
+&=\frac{2}{\Omega^*_0}e^{i\frac{\Delta_0}{2}t}\left[\Delta_i e^{-i\bar{\Delta}t}\left(A\cos\frac{\Omega't}{2} + B\sin\frac{\Omega't}{2} \right)  - i\dot{a}_i\right]
+\end{align}
+where 
+\begin{align}
+-i\dot{a}_i &= (-i)^2\left(\bar{\Delta} + \frac{\Delta_0}{2} \right)e^{-i\bar{\Delta}t}e^{-i\frac{\Delta_0}{2}t}\left[\left(A\cos\frac{\Omega't}{2} + B\sin\frac{\Omega't}{2} \right)\right.\nonumber\\&{\,}\left.+ -i\frac{\Omega'}{2}\left(-A\sin\frac{\Omega't}{2} + B\cos\frac{\Omega't}{2} \right)\right]\nonumber\\
+&= e^{-i\bar{\Delta}t}e^{-i\frac{\Delta_0}{2}t}\left[-\left(\bar{\Delta} + \frac{\Delta_0}{2}\right)\left(A\cos\frac{\Omega't}{2} + B\sin\frac{\Omega't}{2} \right)\right. \nonumber\\
+&{\,} \left.+ i\frac{\Omega'}{2}\left(A\sin\frac{\Omega't}{2} - B\cos\frac{\Omega't}{2} \right) \right].
+\end{align}
+Assume that at $t = 0$, $A = a_i(0)$ and 
+\begin{align}
+B = i\frac{\Omega^*_0}{\Omega'}a_f(0) + i\frac{\Delta_d + \Delta_0}{\Omega'}a_i(0).
+\end{align}
+So, from Eq. (12):
+\begin{align}
+\boxed{a_i(t) = e^{-i\left(\bar{\Delta} + \frac{\Delta_0}{2} \right)t }\left\{ a_i(0)\left[\cos\frac{\Omega't}{2} + i \frac{\Delta_0+\Delta_d}{\Omega'} \sin\frac{\Omega't}{2}\right] +a_f(0)\frac{i\Omega^*_0}{\Omega'}\sin\frac{\Omega't}{2} \right\}}
+\end{align}
+From Eq. (13) and (14), we obtain an expression for $a_f(t)$:
+\begin{align}
+a_f(t) &= \frac{2}{\Omega^*_0}e^{-i\bar{\Delta}t}e^{i\frac{\Delta_0}{2}t}\left\{\Delta_i\left( a_i(0)\cos\frac{\Omega't}{2} + \left(\frac{i\Omega^*_0}{\Omega'}a_f(0) + i\frac{\Delta_d + \Delta_0}{\Omega'}a_i(0) \right)\sin\frac{\Omega't}{2} \right)  \right.\nonumber\\ 
+&{\,}\left. -\left(\bar{\Delta} + \frac{\Delta_0}{2}\left(a_i\cos\frac{\Omega't}{2} + \left( \frac{i\Omega^*_0}{\Omega'}a_f(0)+\frac{i}{2}\frac{\Delta_d + \Delta_0}{\Omega'}a_i(0) \right)\sin\frac{\Omega't}{2}  \right)  \right)\right.\nonumber\\
+&{\,}\left. i\frac{\Omega'}{2}\left(a_i\sin\frac{\Omega't}{2}-\left( \frac{i\Omega^*_0}{\Omega'}a_f(0)+\frac{i}{2}\frac{\Delta_d + \Delta_0}{\Omega'}a_i(0) \right)\cos\frac{\Omega't}{2}   \right)\right\}\nonumber\\
+&= \frac{2}{\Omega^*_0}e^{-i\bar{\Delta}t}e^{i\frac{\Delta_0}{2}t}\left\{ \left(\Delta_i-\bar{\Delta}-\frac{\Delta_0}{2} \right)\left(A\cos\frac{\Omega't}{2} + B\sin\frac{\Omega't}{2} \right) \right.\nonumber\\
+&{\,}\left.\frac{i\Omega'}{2}\left(A\sin\frac{\Omega't}{2} - B\cos\frac{\Omega't}{2} \right)\right\}.
+\end{align}
+Now, notice that
+\begin{align}
+\Delta_i  - \bar{\Delta} = \Delta_i - \frac{\Delta_i + \Delta_f}{2} = -\frac{\Delta_d}{2}.
+\end{align}
+So,
+\begin{align}
+a_f(t) &= e^{-i\bar{\Delta}t}e^{i\frac{\Delta_0}{2}t}\left\{A\left(-\frac{\Delta_d + \Delta_0}{\Omega^*_0}\cos\frac{\Omega't}{2} + \frac{i\Omega'}{\Omega^*_0}\sin\frac{\Omega't}{2} \right)\right.\nonumber\\ 
+&{\,} \left. -B\left(\frac{\Delta_d + \Delta_0}{\Omega^*_0}\sin\frac{\Omega't}{2} +  \frac{i\Omega'}{\Omega^*_0}\cos\frac{\Omega't}{2}\right)  \right\}\nonumber\\
+&= e^{-i\bar{\Delta}t}e^{i\frac{\Delta_0}{2}t}\left\{a_i(0)\left(-\frac{\Delta_d + \Delta_0}{\Omega^*_0}\cos\frac{\Omega't}{2} + \frac{i\Omega'}{\Omega^*_0}\sin\frac{\Omega't}{2} \right)\right.\nonumber\\ 
+&{\,} \left. -\left(i\frac{\Omega^*_0}{\Omega'}a_f(0) + i\frac{\Delta_d + \Delta_0}{\Omega'}a_i(0) \right) \left(\frac{\Delta_d + \Delta_0}{\Omega^*_0}\sin\frac{\Omega't}{2} +  \frac{i\Omega'}{\Omega^*_0}\cos\frac{\Omega't}{2}\right)  \right\}\nonumber\\
+&= e^{-i\bar{\Delta}t}e^{i\frac{\Delta_0}{2}t}\left\{a_i\sin\frac{\Omega't}{2}\left( \frac{i\Omega'}{\Omega^*_0\Omega'} - \frac{i(\Delta_d + \Delta_0)^2}{\Omega^*_0\Omega'}\right)\right.\nonumber\\ 
+&{\,} \left.a_f(0)\left(\cos\frac{\Omega't}{2}-i\frac{\Delta_d + \Delta_0}{\Omega'}\sin\frac{\Omega't}{2} \right) \right\}.
+\end{align}
+Next, note that
+\begin{align}
+\Omega'^2 = (\Delta_0 + \Delta_d)^2 + \vert\Omega_0\vert^2 = (\Delta_0 + \Delta_d)^2 + \Omega_0\Omega^*_0.
+\end{align}
+So
+\begin{align}
+\boxed{a_f(t) = e^{-i\bar{\Delta}t}e^{i\frac{\Delta_0}{2}t}\left\{
+a_i(0)\frac{i\Omega_0}{\Omega'}\sin\frac{\Omega't}{2} + 
+a_f(0)\left(\cos\frac{\Omega't}{2}-i\frac{\Delta_d + \Delta_0}{\Omega'}\sin\frac{\Omega't}{2} \right)  \right\}}.
+\end{align}
+Finally, let us put everything together in matrix form:
+\begin{align}
+\begin{pmatrix}
+a_i(t)\\a_f(t)
+\end{pmatrix} = 
+\mathcal{M}\begin{pmatrix}
+a_i(0)\\a_f(0)
+\end{pmatrix},
+\end{align}
+where $\mathcal{M}(t)$ is the matrix
+\begin{align}
+\boxed{e^{-i\bar{\Delta}t}
+\begin{pmatrix}
+e^{-i\frac{\Delta_0}{2}t}\left(\cos\frac{\Omega't}{2} + i\frac{\Delta_d + \Delta_0}{\Omega'}\sin\frac{\Omega't}{2} \right) & e^{-i\frac{\Delta_0}{2}t}\frac{i\Omega^*_0}{\Omega'}\sin\frac{\Omega't}{2}\\
+e^{i\frac{\Delta_0}{2}t}\frac{i\Omega_0}{\Omega'}\sin\frac{\Omega't}{2} & e^{i\frac{\Delta_0}{2}t}\left(\cos\frac{\Omega't}{2}-i\frac{\Delta_d + \Delta_0}{\Omega'}\sin\frac{\Omega't}{2} \right)
+\end{pmatrix}}
+\end{align}
+Let's define more terms:
+\begin{align}
+\Omega_0 &= \vert\Omega_0\vert e^{i\phi_0}\nonumber\\
+\Omega^*_0 &= \vert\Omega_0\vert e^{-i\phi_0}.
+\end{align}
+Therefore,
+\begin{align}
+\cos\theta &= \frac{\Delta_0 + \Delta_d}{\Omega'}\nonumber\\
+\sin\theta &= \frac{\vert \Omega_0\vert}{\Omega'} = \frac{\Omega_0}{\Omega'}e^{i\phi_0}.
+\end{align}
+At time $\tau$, the matrix $\mathcal{M}(\tau)$ is:
+\begin{align}
+e^{-i\bar{\Delta}\tau}\begin{pmatrix}
+e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2} \right) & ie^{-i\frac{\Delta_0}{2}\tau}e^{-i\phi_0}\sin\theta\sin\frac{\Omega'\tau}{2}\\
+ie^{i\frac{\Delta_0}{2}\tau}e^{i\phi_0}\sin\theta\sin\frac{\Omega'\tau}{2} & e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right)
+\end{pmatrix}
+\end{align}
+Further simplification gives the matrix $\mathcal{M}(\tau)$:
+\begin{align}
+\boxed{e^{-i\bar{\Delta}\tau}\begin{pmatrix}
+e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2} \right) & ie^{-i\left( \frac{\Delta_0}{2}\tau + \phi_0\right) }\sin\theta\sin\frac{\Omega'\tau}{2}\\
+ie^{i\left( \frac{\Delta_0}{2}\tau + \phi_0\right) }\sin\theta\sin\frac{\Omega'\tau}{2} & e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right)
+\end{pmatrix}}
+\end{align}
+What is an interpretation of $\mathcal{M}(\tau)$? The matrix $\mathcal{M}(\tau)$ represents what a laser pulse of width $\tau$ and intensity $\Omega_0$ does to an initial state vector $(a_i(0){\,} a_f(0))^\top$.\\
+
+Now, our goal is to derive the final state vector following a (i) a pulse of width $\tau$, (ii) another a pulse of width $\tau$ after some wait time $T$. Let us call the propagator associated with the second pulse $\mathcal{N}$. The next step is to derive $\mathcal{N}$.
+\begin{align}
+\begin{pmatrix}
+a_i(2\tau + T)\\a_f(2\tau + T)
+\end{pmatrix}=
+\mathcal{N}\begin{pmatrix}
+a_i(\tau + T)\\a_f(\tau + T)
+\end{pmatrix}.
+\end{align}
+We assume that, at $t = 0$, the probability amplitude of finding the atom in the ground state is 1 and in the excited state is 0:
+\begin{align}
+\boxed{\begin{pmatrix}
+a_i(0) \\ a_f(0)
+\end{pmatrix}
+= \begin{pmatrix}
+1 \\ 0
+\end{pmatrix}}
+\end{align}
+This gives the state amplitudes after time $\tau$:
+\begin{align}
+a_i(\tau) &= e^{-i\frac{\Delta_0}{2}\tau}\left\{ e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2} \right) \right\}\nonumber\\
+a_f(\tau) &= e^{-i\bar{\Delta}\tau}\left\{ie^{i\left(\frac{\Delta_0\tau}{2} + \phi_0 \right) }\sin\theta\sin\frac{\Omega'\tau}{2} \right\} 
+\end{align}
+The derivation of $\mathcal{N}$ should be quite similar to that of $\mathcal{M}$. However, we should also take into account the wait time $T$. It turns out that we only need to add the extra terms $e^{i\Delta_0t}$ and $e^{-i\Delta_0t}$ to the off-diagonals. These terms represent how the state vector evolves over the ``rest-time'' $T$. The matrix $\mathcal{N}(T)$ has the following form:
+\begin{align}
+\boxed{e^{-i\bar{\Delta}\tau}\begin{pmatrix}
+	e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2} \right) & ie^{-i\left( \frac{\Delta_0}{2}\tau + \phi_0\right) }\sin\theta\sin\frac{\Omega'\tau}{2}e^{-i\Delta_0T}\\
+	ie^{i\left( \frac{\Delta_0}{2}\tau + \phi_0\right) }\sin\theta\sin\frac{\Omega'\tau}{2}e^{i\Delta_0T} & e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right)
+	\end{pmatrix}}
+\end{align}
+So, the final state vector, as represented by the initial state vector and $\mathcal{M}(\tau)$ and $\mathcal{N}(\tau+T)$ is:
+\begin{align}
+\begin{pmatrix}
+a_i(2\tau+T)\\a_f(2\tau+T)
+\end{pmatrix}=
+\mathcal{N}(\tau + T)\mathcal{M}(\tau)
+\begin{pmatrix}
+a_i(0) \\a_f(0)
+\end{pmatrix} = 
+\mathcal{N}(\tau + T)\mathcal{M}(\tau)
+\begin{pmatrix}
+1 \\ 0
+\end{pmatrix}
+\end{align}
+Since we're only interested in the final state probability amplitude, we can ignore the initial state amplitude:
+\begin{align}
+a_f(2\tau + T) &= e^{-i\bar{\Delta}\tau}\left\{ie^{i\left( \frac{\Delta_0}{2}\tau + \phi_0\right) }\sin\theta\sin\frac{\Omega'\tau}{2}e^{i\Delta_0(\tau+T)}a_i(\tau)\right.\nonumber\\ 
+&{\,}\left. e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right)a_f(\tau)\right\}\nonumber\\
+&= e^{-i\bar{\Delta}\tau}\left\{ie^{i\left( \frac{\Delta_0}{2}\tau + \phi_0\right) }\sin\theta\sin\frac{\Omega'\tau}{2}e^{i\Delta_0(\tau+T)}\right.\nonumber\\&{\,}\left.\times e^{-i\frac{\Delta_0\tau}{2}}\left[ e^{-i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2} + i\cos\theta\sin\frac{\Omega'\tau}{2} \right) \right]\right.\nonumber\\
+&{\,}\left. e^{i\frac{\Delta_0}{2}\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right) e^{-i\bar{\Delta}\tau}\left[ie^{i\left(\frac{\Delta_0\tau}{2} + \phi_0 \right) }\sin\theta\sin\frac{\Omega'\tau}{2} \right]
+\right\}.
+\end{align}
+Further simplification gives:
+\begin{align}
+a_f(2\tau+T) = &{\,}ie^{-2i\bar{\Delta}\tau}e^{i(\Delta_0\tau + \phi_0)}\sin\theta\sin\frac{\Omega'\tau}{2}\left\{e^{iT(\Delta_0-\Delta_i)}\times\right.\nonumber\\&\left.
+\left(\cos\frac{\Omega'\tau}{2}+i\cos\theta\sin\frac{\Omega'\tau}{2} \right) + e^{-i\Delta_f\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right) \right\}
+\end{align}
+In order to calculate the transition probability $P_2 = \vert a_f\vert^2 = a^*_fa_f$, we have to find the complex conjugate of $a_f$. Consider this term:
+\begin{align*}
+E = e^{iT(\Delta_0-\Delta_i)}
+\left(\cos\frac{\Omega'\tau}{2}+i\cos\theta\sin\frac{\Omega'\tau}{2} \right) + e^{-i\Delta_f\tau}\left(\cos\frac{\Omega'\tau}{2}-i\cos\theta\sin\frac{\Omega'\tau}{2} \right).
+\end{align*}
+Let
+\begin{align}
+a &= \cos\frac{\Omega'\tau}{2}\\
+b &= \cos\theta\sin\frac{\Omega'\tau}{2}
+\end{align}
+It follows that
+\begin{align}
+E &= e^{iT(\Delta_0-\Delta_i)}(a+ib) + e^{-i\Delta_f\tau}(a-ib)\nonumber\\
+&= \left[\cos\left( (\Delta_0-\Delta_i)\tau\right) + i\sin\left( (\Delta_0-\Delta_i)\tau\right) \right](a+ib)\nonumber\\
+& {\,} + \left[\cos\Delta_f\tau - i\sin\Delta_f\tau \right](a-ib)\nonumber\\
+&= R + iI.
+\end{align}
+The Real part $R$ is:
+\begin{align}
+R &= a\cos\left( (\Delta_0-\Delta_i)\tau\right) -b\sin\left( (\Delta_0-\Delta_i)\tau\right) + a\cos\Delta_f\tau - b\sin\Delta_f\tau\nonumber\\
+&= 2a\cos\left(\frac{\tau(\Delta_0-\Delta_i+\Delta_f)}{2} \right) \cos\left(\frac{\tau(\Delta_0-\Delta_i-\Delta_f)}{2} \right) \nonumber\\
+&{\,} -2b\sin\left(\frac{\tau(\Delta_0-\Delta_i+\Delta_f)}{2} \right) \sin\left(\frac{\tau(\Delta_0-\Delta_i-\Delta_f)}{2} \right)\nonumber\\
+&= 2\cos\left[T\left( \frac{\Delta_0}{2} - \bar{\Delta}\right)  \right]\left[\cos\frac{\Omega'\tau}{2}\cos\frac{T(\Delta_0+\Delta_d)}{2} - \cos\theta\sin\frac{\Omega'\tau}{2}\sin\frac{T(\Delta_0 + \Delta_d)}{2}\right].
+\end{align}
+And deriving in a similar fashion, the imaginary part $I$ is:
+\begin{align}
+I = 2\sin\left[T\left( \frac{\Delta_0}{2} - \bar{\Delta}\right)  \right]\left[\cos\frac{\Omega'\tau}{2}\cos\frac{T(\Delta_0+\Delta_d)}{2} - \cos\theta\sin\frac{\Omega'\tau}{2}\sin\frac{T(\Delta_0 + \Delta_d)}{2}\right].
+\end{align}
+Therefore, 
+\begin{align}
+P_2 &= a_f^*a_f\nonumber\\
+&= R^2 + I^2\nonumber\\
+&= 4\sin^2\theta\sin^2\frac{\Omega'\tau}{2}\left[\cos\frac{\Omega'\tau}{2}\cos\frac{T(\Delta_0+\Delta_d)}{2} - \cos\theta\sin\frac{\Omega'\tau}{2}\sin\frac{T(\Delta_0 + \Delta_d)}{2} \right] ^2
+\end{align}
+To complete our derivation and match our version with Ramsey's, we make one approximation:
+\begin{align}
+\Delta_d = \Delta_f - \Delta_i \ll \Delta_0,
+\end{align}
+this basically says that the difference in the ac Stark shift between the states is much smaller than the detuning. This leaves us with:
+\begin{align}
+\boxed{P_2 = 4\sin^2\theta\sin^2\frac{\Omega'\tau}{2}\left(\cos\frac{\Omega'\tau}{2}\cos\frac{T\Delta_0}{2} - \cos\theta\sin\frac{\Omega'\tau}{2}\sin\frac{T\Delta_0}{2} \right) ^2}
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
